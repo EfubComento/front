@@ -2,7 +2,15 @@ import styled from "styled-components";
 import logo from "../asset/Comento_logo.png";
 import { AiOutlineSearch } from "react-icons/ai";
 
+const Fixed = styled.div`
+    position: fixed;
+    background-color:#FFFFFF;
+    height:70px;
+    width: 100%; 
+`
 const Wrapper = styled.div`
+    position: fixed;
+    background-color:#FFFFFF;
     height:70px;
     width:1100px;
     display:flex;
@@ -51,7 +59,7 @@ const Input = styled.input`
 
 const Header = () => {
     return(
-        <div style={{display:"flex", justifyContent:"space-around"}}>
+        <Fixed style={{ display:"flex", justifyContent:"space-around"}}>
             <Wrapper>
                 <div style={{display:"flex", flexDirection:"row"}}>
                 <img src={logo} style={{height:"40px"}}/>
@@ -72,7 +80,7 @@ const Header = () => {
                 </ButtonGroup>
                 </div>
             </Wrapper>
-        </div>
+        </Fixed>
     )
 }
 

@@ -81,7 +81,7 @@ const BootCamp = ({bootcamp}) => {
                 ))}
             </Container>
         </div>
-            <div style={{width:"100%", display:"flex", justifyContent:"center"}}>
+            <div style={{width:"100%", display:"flex", justifyContent:"center", marginTop:"15px"}}>
                 {dot?.map((dot) => {
                     return(
                         dot.isSelected?
