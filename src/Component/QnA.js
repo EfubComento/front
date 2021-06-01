@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 const Question = styled.div`
-    width:200px;
-    height:250px;
-    border: 1px solid #333333;
-    margin-left: 30px;
+    width:33%;
+    height:310px;
+    border: 1px solid #DDDDDD;
+    &+&{
+        margin-left: 20px;
+    }
 `
 
 const QnA = () => {
