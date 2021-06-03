@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Question = styled.div`
     width:33%;
-    height:330px;
+    height:380px;
     border: 1px solid #DDDDDD;
     &+&{
         margin-left: 20px;
@@ -16,24 +16,30 @@ const Line = styled.div`
   margin-left: auto;
   margin-right:auto;
 `
-
 const Company = styled.div`
     width:80%;
     max-height: 50%;
     overflow:hidden;
     margin:20px auto 20px auto;  
 `
-
 const Content = styled.p`
     display:-webkit-box;
-    -webkit-line-clamp:6;
+    -webkit-line-clamp:${props => props.line || 6};
     -webkit-box-orient:vertical;
     margin-top:-5px;
-    height: 100%;
+    height: ${props => props.height || 100}%;
     overflow:hidden;
     text-overflow:ellipsis;
     word-break:keep-all;
     white-space: normal;
+`
+
+const Profile = styled.img`
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top:0px;
+    margin-right:10px;
 `
 
 const QnA = ({qna}) => {
@@ -60,9 +66,19 @@ const QnA = ({qna}) => {
                         </p>
                         <Content>{qna.question_content}</Content>
                     </Company>
-                    <Company style={{marginTop:"-10px"}}>
+                    <Company style={{marginTop:"-10px", marginBottom:"5px"}}>
                         <span style={{fontSize:"12px"}}>답변</span>
                         <span style={{fontSize:"12px", color:"#33BB33"}}>&nbsp;{qna.answer.length}</span>
+                    </Company>
+                    <Line/>
+                    <Company style={{marginTop:"15px"}}>
+                        <div style={{display:"flex", flexDirection:"row"}}>
+                            <Profile src={qna.answer[0].profile_url}/>
+                            <div>
+                                <p style={{fontWeight:"bold", marginTop:"0px", fontSize:"15px"}}>{qna.answer[0].answer_company}</p>
+                                <Content line="1" height="40" style={{marginTop:"-10px"}}>{qna.answer[0].answer_content}</Content>
+                            </div>
+                        </div>
                     </Company>
                 </Question>
                 );

@@ -13,7 +13,6 @@ const Title = styled.p`
   font-size:30px;
   font-weight:bold;
 `
-
 const Go = styled.a`
   color: #1E9EFF;
   text-decoration: none;
@@ -35,12 +34,16 @@ function App() {
       question_id:1,
       answer:[
           {
+            answer_company:"에어부산",
+            profile_url:"https://comento.kr/images/my_anonymous_28.svg",
             answer_id:1,
-            answer_content:"~~~",
+            answer_content:"영업관리 직무 5주인턴캠프를 신청한 취준생입니다. 5주인턴캠프에서의 수료가 면접 당락에 크리티컬한 영향을 주지 않는단 건 알고 있지만 그래도 뭐라도 해보면 도움이 되",
           },
           {
+            answer_company:"에어부산",
+            profile_url:"https://comento.kr/images/my_anonymous_28.svg",
             answer_id:2,
-            answer_content:"~~~",
+            answer_content:"영업관리 직무 5주인턴캠프를 신청한 취준생입니다. 5주인턴캠프에서의 수료가 면접 당락에 크리티컬한 영향을 주지 않는단 건 알고 있지만 그래도 뭐라도 해보면 도움이 되",
           }
       ]
     },
@@ -53,12 +56,16 @@ function App() {
       question_id:2,
       answer:[
         {
+          answer_company:"두산중공업",
+          profile_url:"https://comento.kr/images/my_anonymous_26.svg",
           answer_id:3,
-          answer_content:"~~~",
+          answer_content:"영업관리 직무 5주인턴캠프를 신청한 취준생입니다. 5주인턴캠프에서의 수료가 면접 당락에 크리티컬한 영향을 주지 않는단 건 알고 있지만 그래도 뭐라도 해보면 도움이 되~",
         },
         {
+          answer_company:"두산중공업",
+          profile_url:"https://comento.kr/images/my_anonymous_26.svg",
           answer_id:4,
-          answer_content:"~~~",
+          answer_content:"영업관리 직무 5주인턴캠프를 신청한 취준생입니다. 5주인턴캠프에서의 수료가 면접 당락에 크리티컬한 영향을 주지 않는단 건 알고 있지만 그래도 뭐라도 해보면 도움이 되",
         }
       ]
     },
@@ -71,12 +78,16 @@ function App() {
       question_id:3,
       answer:[
         {
+          answer_company:"한컴인텔리전스",
+          profile_url:"https://comento.kr/images/my_anonymous_25.svg",
           answer_id:5,
-          answer_content:"~~~",
+          answer_content:"영업관리 직무 5주인턴캠프를 신청한 취준생입니다. 5주인턴캠프에서의 수료가 면접 당락에 크리티컬한 영향을 주지 않는단 건 알고 있지만 그래도 뭐라도 해보면 도움이 되",
         },
         {
+          answer_company:"한컴인텔리전스",
+          profile_url:"https://comento.kr/images/my_anonymous_25.svg",
           answer_id:6,
-          answer_content:"~~~",
+          answer_content:"영업관리 직무 5주인턴캠프를 신청한 취준생입니다. 5주인턴캠프에서의 수료가 면접 당락에 크리티컬한 영향을 주지 않는단 건 알고 있지만 그래도 뭐라도 해보면 도움이 되",
         }
       ]
     }
@@ -114,7 +125,7 @@ function App() {
     },
   ]);
 
- /* useEffect (async () => {
+  /*useEffect (async () => {
     try{
       const response = await axios.get(`${USER_SERVER}/api/answer`);
       setQna(response.data);

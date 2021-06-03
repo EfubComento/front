@@ -25,7 +25,6 @@ const Line = styled.div`
   margin-left:auto;
   margin-right:auto;
 `
-
 const Button = styled.button`
     width:100%;
     height:40px;
