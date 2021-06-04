@@ -25,7 +25,7 @@ const Line = styled.div`
 
 function App() {
   const [qna , setQna] = useState([
-    {
+    /*{
       id:1,
       company:"삼성전기",
       department: "영업관리",
@@ -90,10 +90,10 @@ function App() {
           answer_content:"영업관리 직무 5주인턴캠프를 신청한 취준생입니다. 5주인턴캠프에서의 수료가 면접 당락에 크리티컬한 영향을 주지 않는단 건 알고 있지만 그래도 뭐라도 해보면 도움이 되",
         }
       ]
-    }
+    }*/
   ]);
   const [bootcamp, setBootcamp] = useState([
-    {
+    /*{
       id:1,
       url:"https://cdn.comento.kr/edu/title_VqpCfdRerh.png?s=960x502",
       department:"미디어",
@@ -122,31 +122,39 @@ function App() {
       url:"https://cdn.comento.kr/edu/title_7abe53d9cd437d37.jpg?s=960x502",
       department:"MD/상품기획",
       content:"브랜드 분석부터 판매율관리까지 패션MD 실무 A to Z"
-    },
+    },*/
   ]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  /*useEffect (async () => {
-    try{
-      const response = await axios.get(`${USER_SERVER}/api/answer`);
-      setQna(response.data);
+  useEffect (async () => {
+    if(isLoaded){
+      console.log("data is loaded");
     }
-    catch(e){
-      console.log("error");
+    else{
+      try{
+      const response1 = await axios.get(`/api/post`);
+      setQna(response1.data);
+      }
+      catch(e){
+        console.log("error");
+      }
+      try{
+        const response2 = await axios.get(`/api/bootcamp`);
+        setBootcamp(response2.data);
+      }
+      catch(e){
+        console.log("error");
+      }
+      setIsLoaded(true);
     }
-    try{
-      const response = await axios.get(`${USER_SERVER}/api/bootcamp`);
-      setBootcamp(response.data);
-    }
-    catch(e){
-      console.log("error");
-    }
-  }, []);*/
+  }, [qna, bootcamp, isLoaded]);
 
   return (
     <div>
       <Header/>
       <div style={{height:"70px"}}></div>
       <img src={Main} style={{width:"100%"}}/>
+      {isLoaded ? 
       <div style={{display:"flex", flexDirection:"column"}}>
         <div style={{width:"1100px", marginLeft:"auto", marginRight:"auto"}}>
           <br/>
@@ -172,6 +180,9 @@ function App() {
           </div>
         </div>
       </div>
+      :
+      <div></div>
+      }
       <Line/>
       <Footer/>
     </div>

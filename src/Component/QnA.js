@@ -56,27 +56,27 @@ const QnA = ({qna}) => {
                     <Company>
                         <span style={{color:"#33BB33"}}>{qna.company}</span>
                         <span style={{color:"#CCCCCC"}}>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-                        {qna.department}
+                        {qna.position}
                     </Company>
                     <Line/>
                     <Company>
                         <p style={{marginTop:"-5px", height: "25px", overflow:"hidden", textOverflow:"ellipsis", whiteSpace: "nowrap"}}>
                         <span style={{fontSize:"20px", color:"#22BB22"}}>Q. </span>
-                        <span style={{fontSize:"18px", fontWeight:"bold"}}>{qna.question_title}</span>
+                        <span style={{fontSize:"18px", fontWeight:"bold"}}>{qna.title}</span>
                         </p>
-                        <Content>{qna.question_content}</Content>
+                        <Content>{qna.content}</Content>
                     </Company>
                     <Company style={{marginTop:"-10px", marginBottom:"5px"}}>
                         <span style={{fontSize:"12px"}}>답변</span>
-                        <span style={{fontSize:"12px", color:"#33BB33"}}>&nbsp;{qna.answer.length}</span>
+                        <span style={{fontSize:"12px", color:"#33BB33"}}>&nbsp;{qna.anwsers.length}</span>
                     </Company>
                     <Line/>
                     <Company style={{marginTop:"15px"}}>
                         <div style={{display:"flex", flexDirection:"row"}}>
-                            <Profile src={qna.answer[0].profile_url}/>
+                            <Profile src="https://comento.kr/images/my_anonymous_25.svg"/>
                             <div>
-                                <p style={{fontWeight:"bold", marginTop:"0px", fontSize:"15px"}}>{qna.answer[0].answer_company}</p>
-                                <Content line="1" height="40" style={{marginTop:"-10px"}}>{qna.answer[0].answer_content}</Content>
+                                <p style={{fontWeight:"bold", marginTop:"0px", fontSize:"15px"}}>{qna.anwsers[0].company}</p>
+                                <Content line="1" height="40" style={{marginTop:"-10px"}}>{qna.anwsers[0].content}</Content>
                             </div>
                         </div>
                     </Company>

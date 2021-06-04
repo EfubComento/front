@@ -71,11 +71,11 @@ const BootCamp = ({bootcamp}) => {
                 {bootcamp?.map((camp) => (
                     <Item>
                     <Camp key={camp.id}>
-                        <img src={camp.url} style={{width:"100%", opacity:"0.3"}}/>
-                        <p>{camp.department}</p>
+                        <img src={camp.image} style={{width:"100%", opacity:"0.3"}}/>
+                        <p>{camp.category}</p>
                         <p>{camp.content}</p>
                     </Camp>
-                    <p style={{marginTop:"-5px", color:"#33BB33"}}>{camp.department}</p>
+                    <p style={{marginTop:"-5px", color:"#33BB33"}}>{camp.category}</p>
                     <p style={{marginTop:"-15px", wordBreak:"keep-all"}}>{camp.content}</p>
                     </Item>
                 ))}

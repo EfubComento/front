@@ -39,6 +39,7 @@ const Button = styled.button`
     font-size: ${props => props.fontSize || "15px"};
     font-weight: ${props => props.fontWeight || "500"};
     margin-left:7px;
+    cursor: pointer;
     &:hover{
         color: ${props => props.hovercolor || "#BBBBBB"}
     }
@@ -62,7 +63,7 @@ const Header = () => {
         <Fixed style={{ display:"flex", justifyContent:"space-around"}}>
             <Wrapper>
                 <div style={{display:"flex", flexDirection:"row"}}>
-                <img src={logo} style={{height:"40px"}}/>
+                <img src={logo} style={{height:"40px", cursor:"pointer"}}/>
                 <Input placeholder="직무명, 회사명, 취업고민"></Input>
                 <AiOutlineSearch/>
                 </div>
