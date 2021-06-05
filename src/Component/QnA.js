@@ -5,6 +5,7 @@ const Question = styled.div`
     width:33%;
     height:380px;
     border: 1px solid #DDDDDD;
+    cursor: pointer;
     &+&{
         margin-left: 20px;
     }
@@ -52,7 +53,7 @@ const QnA = ({qna}) => {
         <div style={{display:"flex", flexDirection:"row"}}>
             {showedQnA?.map(qna => {
                 return(
-                <Question key={qna.id}>
+                <Question key={qna.id} onClick={() => {console.log(qna)}}>
                     <Company>
                         <span style={{color:"#33BB33"}}>{qna.company}</span>
                         <span style={{color:"#CCCCCC"}}>&nbsp;&nbsp;|&nbsp;&nbsp;</span>

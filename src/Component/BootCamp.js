@@ -14,6 +14,7 @@ const Item = styled.div`
     width:32%;
     flex-grow:0;
     flex-shrink:0;
+    cursor: pointer;
     &+&{
         margin-left: 30px;
     }
@@ -69,7 +70,7 @@ const BootCamp = ({bootcamp}) => {
         <div style={{display:"flex", flexDirection:"row", overflowX:"hidden"}}>
             <Container ref={slideRef}>
                 {bootcamp?.map((camp) => (
-                    <Item>
+                    <Item onClick={() => console.log(camp)}>
                     <Camp key={camp.id}>
                         <img src={camp.image} style={{width:"100%", opacity:"0.3"}}/>
                         <p>{camp.category}</p>
